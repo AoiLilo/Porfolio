@@ -6,9 +6,10 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 html, body {
-    margin: 0%;
+    margin: 0;
     font-family: 'Caveat', cursive;
     font-family: 'Commissioner', sans-serif;
 
@@ -90,10 +91,11 @@ img {
 
 .wrapper_main {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    height: 80vh;
+    height: 90vh;
 }
 .main_container {
     display: grid;
@@ -125,8 +127,6 @@ img {
 .main_container_info_text_subtitle {
     font-size: 32px;
     font-weight: 400;
-}
-.main_container_info_text_description {
 }
 .main_container_info_text_links {
     font-size: 1.5em;
@@ -176,10 +176,36 @@ img {
     }
 }
 
+.slider_invite {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.slider_invite_arrow {
+    color: white;
+    font-size: 48px;
+
+    position: absolute;
+    float: center;
+    bottom: 1rem;
+}
+
 .wrapper_slider {
     background-color:rgb(10, 10, 10);
 
-    height: 90vh;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider_text_style {
+    color: white;
+}
+.slider_text {
+    height: 20vh;
 
     display: flex;
     justify-content: center;
@@ -187,8 +213,8 @@ img {
 }
 .slider_container {
     max-width: 1280px;
+    height: 80vh;
 }
-/* Собственно сам слайдер */
 .slider{
     max-width: 100%;
     position: relative;
@@ -196,7 +222,6 @@ img {
     height: 60vh;
     margin-bottom: 15px;
 }
-/* Картинка мастабируется по отношению к родительскому элементу */
 .slider .item img {
     object-fit: cover;
     width: 100%;
@@ -204,7 +229,6 @@ img {
     border: none !important;
     box-shadow: none !important;
 }
-/* Кнопки вперед и назад */
 .slider .prev, .slider .next {
     cursor: pointer;
     position: absolute;
@@ -223,24 +247,19 @@ img {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-/* При наведении на кнопки добавляем фон кнопок */
 .slider .prev:hover,
 .slider .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
-/* Заголовок слайда */
 .slideText {
     position: absolute;
     color: #fff;
     font-size: 35px;
-    /* Выравнивание текста по горизонтали и по вертикали*/
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    /* Тень*/
     text-shadow: 1px 1px 1px #000, 0 0 1em #000;
 }
-/* Кружочки */
 .slider-dots {
     text-align: center;
 }
@@ -258,7 +277,6 @@ img {
 .slider-dots_item:hover {
     background-color: #aaa;
 }
-/* Анимация слайдов */
 .slider .item {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
@@ -267,7 +285,7 @@ img {
 }
 @-webkit-keyframes fade {
     from {
-        opacity: .4
+        opacity: 0
     }
     to {
         opacity: 1
@@ -275,9 +293,97 @@ img {
 }
 @keyframes fade {
     from {
-        opacity: .4
+        opacity: 0
     }
     to {
         opacity: 1
+    }
+}
+
+.menu_btn {
+    display: none;
+}
+
+@media screen and (max-width: 1325px) {
+    .main_container {
+        max-width: 1300px;
+        padding: 0;
+        margin: 0;
+        grid-gap: 0px;
+    }
+    .main_container_info_text {
+        padding-left: 3em;
+    }
+    .hero_box {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .header {
+        height: 10vh;
+        padding: 0 1.5em;
+    }
+    .header_links {
+        display: none;
+    }
+    .menu_btn {
+        display: block;
+        background-color: white;
+        width: 35px;
+        height: 35px;
+        position: relative;
+    }
+    .menu_btn span,
+    .menu_btn span::before,
+    .menu_btn span::after {
+        position: absolute;
+        width: 20px;
+        height: 2px;
+        background-color: #000;
+        top: 50%; margin-top: -1px;
+        left: 50%; margin-left: -10px;
+    }
+    .menu_btn span::before {
+        content: ' ';
+        transform: translateY(-6px);
+    }
+    .menu_btn span::after {
+        content: '';
+        transform: translateY(6px);
+    }
+    .main_container {
+        max-width: 950px;
+        padding: 0;
+        margin: 0;
+    }
+    .main_container_info_text {
+        text-align: center;
+        padding: 0 1rem;
+        margin-bottom: 1.5em;
+    }
+    .hero_box {
+        max-width: 310px;
+    }
+    .slider_container {
+        max-width: 900px;
+    }
+    .slider_invite {
+        display: none;
+    }
+    .slider-dots {
+        display: none;
+    }
+    .slider {
+        display: flex;
+        flex-direction: column;
+    }
+    .mediaPic {
+        display: block;
+    }
+}
+@media screen and (max-height: 750px) and (max-width: 680px) {
+    .hero_box {
+        display: none;
     }
 }
