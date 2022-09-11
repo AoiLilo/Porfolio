@@ -7,6 +7,7 @@
         <title>Портфолио | Главная</title>
         <link href="css/style.css" rel="stylesheet" />
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+        <link rel="icon" href="img/craft_fox_origami_paper_creative_icon_226477.ico" type="image/x-icon">
     </head>
 
     <body>
@@ -20,10 +21,19 @@
                 <a href="#" class="header_links_services links">Услуги</a>
                 <a href="#" class="header_links_contacts links">Контакты</a>
             </div>
-            <a href="#" class="menu_btn">
+            <a data-path="menu" class="menu_btn">
                 <span></span>
             </a>
+            
         </header>
+        <div class="header_dropdown">
+            <div data-target="menu" class="dropdown_content">
+              <li><a class="dropdown_item" href="#">Про меня</a></li>
+              <li><a class="dropdown_item" href="#">Услуги</a></li>
+              <li><a class="dropdown_item" href="#">Контакты</a></li>
+            </div>
+        </div>
+        <script src="scripts/dropdown.js"></script>
 
         <div class="wrapper_main">
             <div class="main_container">
@@ -37,19 +47,30 @@
                             <a href="https://vk.com/aoililobeats" class="main_container_info_text_vk links_icons">
                                 <i class='bx bxl-vk'></i>
                             </a>
-                            <a href="#" class="main_container_info_text_telegram links_icons">
+                            <a href="https://t.me/tvoikohai" class="main_container_info_text_telegram links_icons">
                                 <i class='bx bxl-telegram'></i>
                             </a>
-                            <a href="#" class="main_container_info_text_instagram links_icons">
+                            <a href="https://www.instagram.com/slowly.dancing.in.the.dark" class="main_container_info_text_instagram links_icons">
                                 <i class='bx bxl-instagram'></i>
                             </a>
-                            <a href="#" class="main_container_info_text_twitter links_icons">
+                            <a href="https://twitter.com/btwmenotyou?t=ODZPIt5r8VrElXZQ9OAbKg&s=09" class="main_container_info_text_twitter links_icons">
                                 <i class='bx bxl-twitter'></i>
                             </a>
                         </div>
-                        <button class="main_container_info_button">
+                        <button class="main_container_info_button open-popup_connect">
                             Связаться
                         </button>
+                        <div class="popup_connect_bg">
+                            <div class="popup_connect">
+                                <i class='bx bx-x close_popup'></i>
+                                <div class="popup_connect_text_phone"><h1>8-904-948-44-18</h1></div>
+                                <div class="popup_connect_text_email"><h2>btwmenotyou@gmail.com</h2></div>
+                                <div class="popup_connect_description_container">
+                                    <p>Время для звонков: 10:00 - 20:00. Время уральское.</p><p class="cur_date">Время:</p>
+                                </div>
+                            </div>
+                            <script src="scripts/popupConnect.js"></script>
+                        </div>
                     </div>
                     
                 </div>
@@ -93,6 +114,44 @@
                 </div>
             </div>
             <script src="scripts/sim-slider.js"></script>
+        </div>
+
+        <div class="wrapper_description" id="next2">
+            <div class="description_title"><h1 class="description_title_text">Специализация</h1></div>
+            <div class="description_container">
+                <div class="description_container_text">
+                    <h1 class="description_container_text_subtitle">.превращаю идеи в рабочие концепты</h1>
+                    <p class="description_container_text_paragraph">Полный цикл разработки, который включает в себя разработку дизайна сайта, лендинга, постановка на хостинг, а также внедрение "админ-панели", которая позволяет без исползования кодера вносить изменения в верстку.</p>
+                </div>
+                <div class="description_container_icons">
+                    <i class='bx bx-code-alt desc_icons open-popup' id="open" about="popupCode"></i>
+                    <i class='bx bxs-file-html desc_icons open-popup' id="open" about="popupLend"></i>
+                    <i class='bx bxs-user-pin desc_icons open-popup' id="open" about="popupPers"></i>
+                    <i class='bx bxs-file-js desc_icons open-popup' id="open" about="popupJs"></i>
+                    <i class='bx bxs-id-card desc_icons open-popup' id="open" about="popupKey"></i>
+                    <i class='bx bxs-lock-alt desc_icons open-popup' id="open" about="popupSecure"></i>
+                    <i class='bx bxs-calendar-check desc_icons open-popup' id="open" about="popupDeadline"></i>
+                    <i class='bx bxs-book-bookmark desc_icons open-popup' id="open" about="popupReadme"></i>
+                    <i class='bx bxs-envelope desc_icons open-popup' id="open" about="popupMessage"></i>
+                </div>
+                <div class="description_container_picture">
+                    <img src="../img/description_container_picture.PNG" alt="" class="description_container_picture_img">
+                </div>
+            </div>
+
+            <div class="popup_code_bg">
+                <div class="popup_code">
+                    <i class='bx bx-x close_popup'></i>
+                    <div class="popup_code_title_text_box"><h1 class="popup_code_title_text" id="title">Заголовок</h1></div>
+                    <p class="popup_code_text" id="text">Текст</p>
+                </div>
+            </div>
+
+            <script src="scripts/popupCode.js"></script>
+        </div>
+
+        <div class="wrapper_footer">
+            <div class="footer_text">© Starikov Pavel</div>
         </div>
     </body>
 </html>
